@@ -31,7 +31,7 @@ fn login(target: String, username: String,password: String) -> (bool,String){
 fn main() {
 
     /*
-    //mutil tread
+    //mutilthread
     let mut handles = vec![];
     let usernamestr = std::fs::read_to_string("1.txt").unwrap();
     let usernames =usernamestr.split("\n")
