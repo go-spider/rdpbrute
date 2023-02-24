@@ -29,6 +29,34 @@ fn login(target: String, username: String,password: String) -> (bool,String){
 
 
 fn main() {
+
+    /*
+    //mutil tread
+    let mut handles = vec![];
+    let usernamestr = std::fs::read_to_string("1.txt").unwrap();
+    let usernames =usernamestr.split("\n")
+    .map(|v| v.trim().to_string())
+    .collect::<Vec<String>>();
+    for username in &usernames {
+        let tmp = username.clone();
+        let handle = thread::spawn(move || {
+            let d:Vec<_> = tmp.split("||").collect();
+            if d.len()==3{
+                let (a, b)=login(d[0].to_string(), d[1].to_string(),d[2].to_string());
+                if a{
+                    println!("{}||{}", tmp, b); 
+                }else{
+                    println!("{}||{}", tmp, b);
+                }   
+            }
+        });
+        handles.push(handle);
+    }
+    for handle in handles {
+        handle.join().expect("TODO: panic message");
+    }
+    */
+    
     let usernamestr = std::fs::read_to_string("1.txt").unwrap();
     let usernames =usernamestr.split("\n")
     .map(|v| v.trim().to_string())
