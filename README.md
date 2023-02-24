@@ -12,7 +12,8 @@ fn login(target: String, username: String,password: String) -> (bool,String){
         Ok(tcpconn)=>{
             let mut connector = Connector::new()
             .screen(800, 600)
-            .credentials("".to_string(), username, password);
+            .credentials("".to_string(), username, password)
+            .auto_logon(true);
             match connector.connect(tcpconn) {
                 Ok(mut client) => {
                     client.shutdown().unwrap();
